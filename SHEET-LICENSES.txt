@@ -1,0 +1,26 @@
+OKeys sheet music dependencies (bundled for local/offline use)
+
+PDF.js / pdfjs-dist 6.4.299, Mozilla and contributors
+https://github.com/mozilla/pdf.js
+Apache License 2.0: app/vendor/pdf/LICENSE
+Additional font, CMap and WASM notices accompany their respective directories.
+The direct-file bundles adapt only module exports/import.meta references and
+package the same worker and binary resources for loading without a web server.
+
+Tesseract.js 7.0.0, Jerome Wu, Kevin Kwok and contributors
+https://github.com/naptha/tesseract.js
+Apache License 2.0: app/vendor/ocr/LICENSE
+
+Tesseract.js-core (version pinned transitively in package-lock.json)
+https://github.com/naptha/tesseract.js-core
+Apache License 2.0: app/vendor/ocr/CORE-LICENSE
+The direct-file worker combines the unmodified core with a model-message adapter
+and Tesseract worker; language model bytes are supplied locally during loading.
+
+English language model distributed by @tesseract.js-data/eng 1.0.0
+https://github.com/naptha/tessdata
+The npm distribution declares MIT; underlying Tesseract trained data is
+distributed under Apache License 2.0 (https://github.com/tesseract-ocr/tessdata_best).
+The bundled file is 4.0.0_best_int/eng.traineddata.gz, used for Latin chord OCR.
+
+Source documents loaded by the user are not included in the app or uploaded.

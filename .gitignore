@@ -1,0 +1,8 @@
+node_modules/
+__pycache__/
+*.pyc
+tests/sheet-*-preview.png
+tests/sheet-image-fixture.png
+
+# Local development files and media; excluded from distribution.
+/_local-only/

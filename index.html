@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e8eeeb">
+  <title>OKeys · Chord studio</title>
+  <link rel="icon" href="app/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="app/style.css">
+  <link rel="stylesheet" href="app/sheet.css">
+  <script defer src="app/sheet-music.js"></script>
+  <script defer src="app/sheet.js"></script>
+  <script defer src="app/music.js"></script>
+  <script defer src="app/piano-samples.js"></script>
+  <script defer src="app/audio.js"></script>
+  <script defer src="app/select.js"></script>
+  <script defer src="app/guitar.js"></script>
+  <script defer src="app/saxophone-data.js"></script>
+  <script defer src="app/app.js"></script>
+</head>
+<body data-mode="piano">
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand-and-mode"><div class="brand"><img src="app/icon.svg" alt="" width="40" height="40"><div><h1>OKeys<span>studio</span></h1><p>A little space for harmony.</p></div></div>
+      <fieldset class="mode-selector" aria-label="Instrument mode"><legend>Instrument mode</legend><label><input type="radio" name="mode" value="piano" checked> Piano</label><label><input type="radio" name="mode" value="guitar"> Guitar</label><label><input type="radio" name="mode" value="saxophone"> Saxophone</label></fieldset></div>
+      <div class="header-actions"><span id="audio-state" class="status" title="Click or press a key to enable low-latency audio"><i></i>Ready to play</span><button class="glass-button" id="help-button" title="Keyboard shortcuts">⌨ <span>Shortcuts</span></button><button class="glass-button" id="fullscreen-button" aria-label="Enter fullscreen" title="Enter fullscreen">⛶ <span>Fullscreen</span></button></div>
+    </header>
+    <main class="workspace">
+      <section class="glass explorer" aria-label="Chord explorer">
+        <div class="root-heading"><span>Root note</span><span id="root-hint">Choose a note, or drag it into the wheel</span></div>
+        <div id="roots" class="root-row" aria-label="Root notes"></div>
+        <div class="wheel-area">
+          <div class="wheel-wrap" id="wheel-wrap"><svg id="wheel" viewBox="-202 -202 404 404" aria-label="Chord wheel"></svg><div class="wheel-center"><strong id="center-root">—</strong></div></div>
+        </div>
+        <aside class="chord-sidebar" aria-label="Chord details and octave">
+          <div class="chord-readout" aria-live="polite"><div><span id="chord-symbol">—</span><p id="chord-description">Choose a root note.</p></div><div id="chord-notes" class="note-chips"></div></div>
+          <div class="explorer-footer"><div class="octave-controls"><button id="octave-up" aria-label="Raise root octave">+</button><span>Octave <b id="octave">4</b></span><button id="octave-down" aria-label="Lower root octave">−</button></div><div class="accidentals"><button id="flat" title="Flat · Ctrl" aria-label="Toggle flat" aria-pressed="false">♭</button><button id="sharp" title="Sharp · Shift" aria-label="Toggle sharp" aria-pressed="false">♯</button></div></div>
+        </aside>
+        <section id="guitar-panel" class="guitar-panel" aria-label="Guitar fingering" hidden>
+          <div class="guitar-heading"><div><p class="eyebrow">GUITAR FINGERINGS</p><h2 id="guitar-title">Choose a chord</h2></div><div class="guitar-controls"><button id="guitar-sustain" data-sustain class="sustain" aria-pressed="false" aria-label="Guitar auto sustain"><i></i><span>Sustain · Off</span></button><label class="volume">Volume <input id="guitar-volume" type="range" min="0" max="100" value="65" aria-label="Guitar volume"></label><button id="guitar-stop" class="tool-button" title="Stop all notes">Stop <kbd>Esc</kbd></button></div></div>
+          <p id="guitar-hint">Standard tuning · E A D G B E</p>
+          <div id="guitar-diagrams" class="guitar-diagrams" aria-label="Chord fingering options"></div>
+          <p class="fingering-legend">× muted · ○ open · 1–4 fingers · black = base chord · green = added slash bass · click a shape to play</p>
+        </section>
+        <section id="sax-panel" class="sax-panel" aria-label="Saxophone fingering" hidden><div><p class="eyebrow">SAXOPHONE FINGERING</p><h2 id="sax-note">Choose a note</h2><p id="sax-hint">Press a key below to see its fingering.</p><p class="fingering-legend">Green keys = press · white keys = release</p></div><div id="sax-diagram"></div><p class="sax-range">42 notes · C3–F6 · reference chart order</p></section>
+      </section>
+      <section class="glass score" id="sheet-panel" aria-label="Sheet music workspace">
+        <div class="sheet-heading"><div class="sheet-title"><p class="eyebrow">YOUR MUSIC</p><h2 id="sheet-name">Sheet music</h2></div><div class="sheet-actions"><button class="glass-button" id="sheet-open">Open file</button><button class="sheet-icon" id="sheet-close" aria-label="Close sheet music" title="Close sheet music" disabled>×</button></div></div>
+        <input id="sheet-file" type="file" accept=".pdf,.txt,image/png,image/jpeg,image/webp,image/gif,image/bmp,image/avif" hidden>
+        <div class="sheet-toolbar" id="sheet-toolbar" hidden>
+          <div class="sheet-control-group" aria-label="Zoom"><button id="sheet-zoom-out" class="sheet-icon" aria-label="Zoom out">−</button><output id="sheet-zoom">100%</output><button id="sheet-zoom-in" class="sheet-icon" aria-label="Zoom in">+</button><button id="sheet-fit" class="sheet-small" aria-pressed="true" title="Automatically fit sheet width">Fit</button></div>
+          <div class="sheet-control-group" aria-label="Transpose chords"><span class="sheet-control-label">Key</span><button id="sheet-key-down" class="sheet-icon" aria-label="Transpose down one semitone" disabled>−</button><button id="sheet-key-reset" class="sheet-small" title="Reset to original key" disabled>Original</button><button id="sheet-key-up" class="sheet-icon" aria-label="Transpose up one semitone" disabled>+</button></div>
+        </div>
+        <div class="sheet-viewport" id="sheet-viewport" tabindex="-1" aria-label="Sheet music pages">
+          <div class="sheet-empty" id="sheet-empty"><div class="sheet-empty-icon" aria-hidden="true">♬</div><h3>A place for your next song.</h3><p>Drop your sheet music here<br>PDF, image or TXT</p><button class="glass-button" id="sheet-browse">Choose a file</button><small>Files stay on your device.</small></div>
+          <div class="sheet-pages" id="sheet-pages"></div>
+        </div>
+        <p class="sheet-status" id="sheet-status" role="status" aria-live="polite">Load a song and play along.</p>
+        <div class="sheet-player" id="sheet-player" hidden>
+          <div class="sheet-play-row"><button id="sheet-auto" class="sheet-small" aria-pressed="false">▶ Auto scroll</button><label class="sheet-speed">Speed <input id="sheet-speed" type="range" min="0" max="60" step="1" value="5" aria-label="Scrolling speed"><output id="sheet-speed-value">5 px/s</output></label></div>
+          <div class="sheet-play-row"><div class="sheet-control-group"><button id="sheet-previous" class="sheet-icon" aria-label="Previous page">‹</button><output id="sheet-page-number">1 / 1</output><button id="sheet-next" class="sheet-icon" aria-label="Next page">›</button></div><p class="sheet-shortcuts"><kbd>Tab</kbd> next chord · <kbd>`</kbd> previous · <kbd>Caps Lock</kbd> replay<br><span class="sheet-space-hints"><span title="Tap Space once" aria-label="Tap Space once for next"><kbd>Space</kbd> next</span> · <span title="Double-tap Space" aria-label="Double-tap Space to go back"><kbd class="space-double">Space</kbd> back</span> · <span title="Hold Space to scroll" aria-label="Hold Space to scroll"><kbd class="space-held">Space</kbd> scroll</span></span></p></div>
+        </div>
+        <div class="sheet-drop-hint" hidden>Drop to open your music</div>
+      </section>
+    </main>
+    <section class="glass piano-panel" aria-label="88-key piano">
+      <div class="piano-toolbar"><div class="piano-title"><h2>The keyboard</h2><span id="keyboard-range">88 keys <span class="muted">/</span> A0 — C8</span></div><div class="piano-tools"><button id="mute-app" class="tool-button" aria-pressed="false" title="Mute chord and on-screen key sound. MIDI stays audible.">♫ <span>Mute app sound</span></button><button id="midi-connect" class="tool-button">⌁ <span>Connect MIDI</span></button><div id="midi-devices" class="glass-select" hidden></div><div id="instrument" class="glass-select"></div><button id="sustain" data-sustain class="sustain" type="button" aria-pressed="false" aria-label="Auto sustain" title="Auto sustain off: follows your sustain pedal. Click for auto sustain."><i></i><span>Sustain</span></button><label class="volume">Volume <input id="volume" type="range" min="0" max="100" value="65" aria-label="Volume"></label><button id="panic" class="tool-button" title="Stop all notes · Escape">Stop <kbd>Esc</kbd></button></div></div>
+      <div class="piano-scroll"><div class="piano" id="piano"></div></div>
+    </section>
+    <footer class="app-footer"><span id="mode-shortcuts"><kbd>A</kbd>–<kbd>G</kbd> root <span class="separator">·</span> <kbd>Shift</kbd> sharp <span class="separator">·</span> <kbd>Ctrl</kbd> flat</span></footer>
+  </div>
+  <dialog id="help"><div class="dialog-heading"><div><p class="eyebrow">MAKE IT SECOND NATURE</p><h2>Your keyboard, in harmony.</h2></div><button id="help-close" class="glass-button" aria-label="Close shortcuts">✕</button></div><p>Press <b>A–G</b> to select a root. Press the same letter again to clear it.<br><b>Shift</b> toggles sharp; tap <b>Ctrl</b> to toggle flat. Selecting the other accidental replaces the first. Clearing or changing the root clears the accidental. Tab plays the next sheet chord; backtick (`) plays the previous chord; Caps Lock replays the current chord. Clicking a sheet chord sets the position for both directions. Ctrl shortcuts such as copy and refresh still work.</p><div class="shortcut-grid" id="shortcuts"></div><div class="help-foot"><p><b>Modes:</b> Piano supports MIDI. Guitar keeps the chord wheel and shows a standard-tuning fretboard below it. Saxophone replaces the wheel with fingerings from the supplied chart; click or touch its 42 keys (C3–F6), or focus a key and press Enter. Space controls sheet scrolling when a sheet is loaded. MIDI input is disabled in Guitar and Saxophone modes. Guitar automatically selects a plucked-string sound and strums the displayed frets. Saxophone selects a sustained reed sound with gentle vibrato; release fades quickly with Auto Sustain off, or over 1.5 seconds with it on. A single note keeps its fingering visible after release. Playing a chord or multiple keys clears it. These two sounds are synthesized locally and work offline.</p><p><b>↑ / ↓</b> change octave · <b>Escape</b> stops sound and clears selection.<br>Chords ring for 2.5 seconds, or decay naturally with auto sustain on. Click or touch piano keys to play individual notes.</p><p><b>MIDI:</b> Connect MIDI, allow browser access, then select your device. Velocity and CC64 sustain are supported. Use wired audio for the lowest delay. Held keys stay green; pedal-held highlights fade with each note’s sound. Chord recognition uses the keys held by your fingers, ignores octave doubling, and requires an exact match. Ambiguous chords prefer the bass as root.
+<br><b>Sustain:</b> Auto sustain is on by default. Click Sustain to toggle it. Off follows your pedal. On keeps released notes ringing and clears old tails as soon as your held notes form a new recognized chord; single notes decay naturally. Keys still held down keep sounding. MIDI chord detection runs as each note arrives, without delaying playback. Click again to return to your pedal.<br><b>Sheet playback:</b> Auto Sustain off plays on press and fades quickly on release. Auto Sustain on plays when you release the click, then rings out. Guitar grids show the base chord in black and added slash-bass positions in green.<br><b>Sound:</b> Grand piano uses local Salamander recordings by Alexander Holm (CC BY 3.0). Samples decode once at startup; note playback requires no downloads.</p></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

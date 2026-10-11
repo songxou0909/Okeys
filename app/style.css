@@ -1,0 +1,139 @@
+:root{font-family:Inter,"Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;color:#263b33;background:#e7eeeb;font-synthesis:none;--accent:#98c379;--ink:#263b33;--muted:#7b8b85;--line:rgba(70,94,81,.12)}
+*{box-sizing:border-box}body{margin:0;min-width:360px;min-height:100vh;background:radial-gradient(ellipse at 95% 0%,#e2dfeb 0,transparent 48%),radial-gradient(ellipse at 5% 65%,#d2e1d4 0,transparent 48%),linear-gradient(125deg,#eef2eb,#e4ebe9 55%,#e6e6ed);overflow-x:hidden}button,input,select{font:inherit}button{cursor:pointer;color:inherit}button,select{ -webkit-tap-highlight-color:transparent}button:disabled{opacity:.35;cursor:default}button:focus,select:focus,input:focus,[role=button]:focus{outline:none}body.keyboard-navigation button:focus-visible,body.keyboard-navigation select:focus-visible,body.keyboard-navigation input:focus-visible,body.keyboard-navigation [role=button]:focus-visible{outline:2px solid #649447;outline-offset:3px}button{transition:background .16s,box-shadow .16s,transform .16s}button:active:not(:disabled){transform:translateY(1px)}button:focus:not(:focus-visible){outline:none}button,svg,.piano{user-select:none}button[hidden],[hidden]{display:none!important}h1,h2,h3,p{margin:0}button{border:0}kbd{font-family:inherit;font-size:10px;line-height:1.6;display:inline-block;min-width:17px;padding:0 4px;border:1px solid rgba(63,86,73,.15);border-bottom-width:2px;border-radius:4px;color:#718078;background:#ffffff50;text-align:center}.ambient{position:fixed;pointer-events:none;z-index:-1;filter:blur(55px);border-radius:50%}.ambient-one{width:440px;height:440px;left:-150px;top:300px;background:#bdcfb7}.ambient-two{width:480px;height:480px;right:-140px;top:-100px;background:#d4cbe2}.app-shell{max-width:1680px;margin:auto;padding:27px 38px 17px}.app-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}.brand{display:flex;align-items:center;gap:12px}.brand img{box-shadow:0 5px 12px #273b3320;border-radius:13px}.brand h1{font-size:25px;font-weight:650;letter-spacing:-1.1px}.brand h1 span{font-size:13px;font-weight:450;letter-spacing:.2px;margin-left:8px;color:#84918a}.brand p{font-size:10px;letter-spacing:.3px;color:#7e8c84;margin-top:3px}.header-actions{display:flex;align-items:center;gap:22px}.status{font-size:11px;color:#75847b;display:flex;align-items:center;gap:7px}.status i,.tiny-dot{width:5px;height:5px;background:#89ae70;display:inline-block;border-radius:50%}.glass-button{border:1px solid #ffffffbd;box-shadow:0 3px 12px #3d59400a,inset 0 1px 0 #ffffff;background:#ffffff59;border-radius:10px;padding:9px 14px;font-size:12px}.glass-button:hover{background:#fff9}.workspace{display:grid;grid-template-columns:minmax(480px,1.03fr) minmax(300px,1fr);gap:22px}.glass{background:linear-gradient(140deg,#ffffff9c,#ffffff54);border:1px solid #ffffffc9;border-radius:23px;box-shadow:0 12px 40px #3e534509,inset 0 1px 0 #fff;backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px)}.explorer{padding:24px 27px 15px}.panel-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}.eyebrow{font-size:9px;font-weight:650;letter-spacing:2px;color:#8a9990;margin-bottom:6px}h2{font-size:22px;letter-spacing:-.65px;font-weight:550}.tag{font-size:10px;color:#7c927b;padding:6px 9px;border:1px solid #aab8a52e;background:#e7eee24d;border-radius:20px;white-space:nowrap}.tag.quiet{color:#929c97;background:#ffffff38}.root-heading{display:flex;align-items:center;justify-content:space-between;margin:23px 0 9px;font-size:10px;color:#63766a}.root-heading span:last-child{font-size:9px;color:#93a095}.root-row{display:grid;grid-template-columns:repeat(12,1fr);gap:5px}.root-button{height:35px;font-size:12px;border:1px solid #ffffffc0;border-radius:9px;background:#ffffff59;box-shadow:0 2px 3px #334c3905;touch-action:none}.root-button.black-root{color:#829087;background:#b4c2ba1f}.root-button:hover{background:#fff}.root-button.selected{background:#314d3e;color:#f2f7ec;border-color:#314d3e;box-shadow:0 3px 8px #30463628}.wheel-area{display:flex;align-items:center;flex-direction:column;padding:7px 0 9px}.wheel-wrap{position:relative;width:min(100%,382px);aspect-ratio:1;touch-action:none;filter:drop-shadow(0 6px 10px #52654f07)}#wheel{display:block;width:100%;height:100%;overflow:visible}.sector{cursor:pointer;outline:none}.sector path{fill:#ffffff60;stroke:#ffffffb0;stroke-width:1;transition:fill .12s,stroke .12s}.sector.outer path{fill:#e3ebe14a}.sector text{fill:#57695d;font-size:11.3px;font-weight:550;pointer-events:none}.sector .key-label{font-size:7.8px;font-weight:400;fill:#99a398}.sector:hover path,.sector.preview path{fill:#d3e3c8;stroke:#b5cba5}.sector.playing path{fill:#98c379;stroke:#f1f8e9}.sector.playing text{fill:#294523}body.keyboard-navigation .sector:focus-visible path{stroke:#547b41;stroke-width:2}.wheel-wrap.dragging{filter:drop-shadow(0 4px 15px #98c37945)}.wheel-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:27%;height:auto;aspect-ratio:1;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;background:linear-gradient(140deg,#ffffffb0,#ffffff34);border:1px solid #fff;box-shadow:0 4px 15px #32433208}.wheel-center .eyebrow{font-size:7px;letter-spacing:1.5px;margin:0;color:#90a083}.wheel-center strong{font-weight:450;font-size:clamp(24px,3.1vw,44px);line-height:1.15;letter-spacing:-2px;margin:4px 0}.wheel-center>span:last-child{font-size:9px;color:#899485}.wheel-legend{display:flex;gap:22px;color:#96a192;font-size:9px;margin-top:-1px}.wheel-legend span{display:flex;align-items:center;gap:6px}.wheel-legend i{width:6px;height:6px;border-radius:50%;background:#c7d4c1}.wheel-legend span:last-child i{background:#e0e6dc;border:1px solid #b4c0ac}.chord-readout{min-height:63px;background:linear-gradient(120deg,#ffffff80,#ffffff20);border:1px solid #ffffffaf;border-radius:13px;padding:12px 15px;display:flex;align-items:center;justify-content:space-between;gap:10px}.chord-readout #chord-symbol{font-size:22px;font-weight:500;letter-spacing:-.7px}.chord-readout p{font-size:9px;color:#8a978b;margin-top:3px}.note-chips{display:flex;gap:4px;justify-content:flex-end;flex-wrap:wrap;max-width:60%}.note-chips span{font-size:10px;background:#e4eddc7f;border:1px solid #cad8bf50;color:#6e845c;border-radius:5px;padding:5px 6px}.explorer-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:10px;color:#8a998b}.octave-controls{display:flex;gap:9px;align-items:center}.octave-controls button,.accidentals button{width:27px;height:25px;background:#ffffff60;border:1px solid #ffffff80;border-radius:7px;color:#6f816e;font-size:14px}.octave-controls b{font-weight:550;color:#526b49}.accidentals{display:flex;gap:5px}.accidentals button[aria-pressed=true]{background:#98c379;color:#263b33}.score{position:relative;min-height:540px;padding:24px 27px;display:flex;flex-direction:column}.score-empty{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;padding-bottom:20px;text-align:center}.score-mark{width:105px;height:80px;position:relative;margin-bottom:25px;padding-top:12px;opacity:.48}.score-mark span{display:block;height:1px;background:linear-gradient(90deg,transparent,#a6b5a4,transparent);margin:9px 0}.score-mark b{font-family:Georgia,serif;font-size:70px;font-weight:400;position:absolute;top:-11px;left:30px;color:#8ba184}.score-empty h3{font-family:Georgia,"Times New Roman",serif;font-size:22px;font-weight:400;letter-spacing:-.3px;color:#869782}.score-empty p{color:#a0ab9b;font-size:11px;line-height:1.9;margin-top:12px}.score-foot{display:flex;align-items:center;justify-content:center;gap:7px;color:#a4afa1;font-size:9px}.score-foot .tiny-dot{background:#c4d0be;width:4px;height:4px}.piano-panel{margin-top:22px;padding:18px 22px 10px}.piano-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:15px}.piano-title{display:flex;align-items:baseline;gap:12px;white-space:nowrap}.piano-title h2{font-size:14px;letter-spacing:-.3px}.piano-title>span{font-size:9px;color:#88968b}.muted{color:#b6beb5;margin:0 4px}.piano-tools{display:flex;align-items:center;gap:16px}.tool-button{background:none;padding:4px 0;font-size:10px;color:#788a78;white-space:nowrap}.tool-button:hover{color:#294d2c}.tool-button[aria-pressed=true]{color:#3e682c;background:#d4e5c8;border-radius:6px;padding:4px 8px}.tool-button kbd{margin-left:4px}.volume{display:flex;align-items:center;gap:8px;font-size:10px;color:#8f9b8d}.volume input{width:96px;height:3px;accent-color:#8daa7c;cursor:pointer}.sustain{display:flex;gap:5px;align-items:center;font-size:9px;color:#829078;background:#ffffff40;border:1px solid #bdcdb460;border-radius:7px;padding:6px 8px;white-space:nowrap}.sustain:hover{background:#ffffff90}.sustain[aria-pressed=true]{background:#d4e5c8;border-color:#9ebd8c;color:#3e682c}.sustain i{width:5px;height:5px;border-radius:50%;background:#c9d3c2}.sustain.on{color:#57833e}.sustain.on i{background:#85b65e;box-shadow:0 0 8px #98c379}.piano-scroll{overflow-x:auto;padding-bottom:3px}.piano{height:133px;min-width:880px;position:relative;touch-action:none;border-radius:0 0 7px 7px;background:#354338;border-top:3px solid #52634f;box-shadow:0 5px 9px #2b42361a}.piano-key{position:absolute;top:0;height:100%;background:linear-gradient(#ecefe9,#fdfefa 15%,#fdfef9 85%,#edf1e8);border:1px solid #c7d0c1;border-top:0;border-radius:0 0 4px 4px;box-shadow:inset 0 -3px 0 #d6decd;color:#98a28e;font-size:8px;padding:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:9px;touch-action:none}.piano-key.black{height:63%;background:linear-gradient(100deg,#455047,#28372e 65%,#203025);border:1px solid #25392d;box-shadow:inset 0 -4px 0 #51614e,1px 3px 3px #1b30283b;border-radius:0 0 3px 3px;z-index:2;color:#a8b3a2;font-size:7px;padding-bottom:7px}.piano-key.pressed,.piano-key.black.pressed{background:#98c379;border-color:#7ba760;box-shadow:inset 0 -3px 0 #80ac62,0 0 9px #98c37960;color:#2d4c23}.piano-key.sustained::after{content:"";position:absolute;inset:0;border-radius:inherit;background:#98c379;box-shadow:inset 0 -3px 0 #80ac62;opacity:var(--sustain-level,0);pointer-events:none}.piano-key.preview:not(.pressed):not(.sustained){box-shadow:inset 0 -5px 0 #98c379}.piano-bottom{display:flex;justify-content:space-between;margin-top:10px;font-size:9px;color:#9ca694}.app-footer{display:flex;justify-content:space-between;align-items:center;margin-top:15px;color:#9aa793;font-size:9px}.app-footer kbd{font-size:8px;background:none;border-color:#9dad971f}.separator{margin:0 8px;color:#b5bead}.app-footer>span:not(#mode-shortcuts){font-family:Georgia,serif;font-style:italic;font-size:11px;color:#a0aa96}select{max-width:170px;border:1px solid #bdcdb46b;border-radius:6px;padding:3px;background:#fff8;color:#58744b;font-size:10px}dialog{width:min(760px,94vw);max-height:90vh;overflow:auto;border:1px solid #fff;background:#f2f5eef5;border-radius:23px;padding:28px;color:#354931;box-shadow:0 30px 100px #263b3340;backdrop-filter:blur(30px)}dialog::backdrop{background:#263b3340;backdrop-filter:blur(7px)}.dialog-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}dialog p{font-size:12px;line-height:1.8;color:#7f8e78}.shortcut-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px 20px;margin:20px 0}.shortcut-item{display:flex;justify-content:space-between;align-items:center;padding:7px 2px;border-bottom:1px solid #526b4910;font-size:11px}.shortcut-item small{color:#8a9a80;margin-left:4px;font-size:9px}.shortcut-item kbd{background:#fff9;font-size:11px}.help-foot{border-top:1px solid #526b4915;padding-top:14px;display:grid;gap:10px}.toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);background:#304638ed;color:#eef4e9;padding:13px 20px;border:1px solid #ffffff60;box-shadow:0 5px 30px #1a34202a;border-radius:12px;max-width:90vw;font-size:12px;z-index:20}
+/* The wheel owns the main column; details never reduce its height. */
+.workspace{grid-template-columns:minmax(490px,1.12fr) minmax(260px,1fr)}
+.explorer{display:grid;grid-template-columns:104px minmax(0,1fr);grid-template-rows:auto auto 1fr;gap:0 14px;padding:20px;min-width:0}
+.root-heading,.root-row{grid-column:1/-1}.root-heading{margin:0 0 9px}.root-row{margin-bottom:12px}
+.wheel-area{grid-column:2;grid-row:3;min-width:0;justify-content:center;padding:0}
+.wheel-wrap{width:min(100%,calc(100dvh - 350px));max-width:560px;min-width:0}
+.wheel-legend{gap:12px;margin-top:6px;font-size:8px}
+.chord-sidebar{grid-column:1;grid-row:3;display:flex;flex-direction:column;align-self:center;gap:24px;min-width:0;padding:4px 0}
+.chord-readout{background:none;border:0;padding:0;min-height:0;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.chord-readout #chord-symbol{font-size:25px;overflow-wrap:anywhere}.chord-readout p{font-size:10px;line-height:1.6}
+.note-chips{max-width:100%;justify-content:flex-start;gap:4px}.note-chips span{font-size:10px;padding:4px 5px}
+.explorer-footer{flex-direction:column;align-items:flex-start;gap:18px;margin:0}
+.octave-controls{flex-direction:column;gap:7px;width:76px}.octave-controls button{width:40px;height:29px}
+.accidentals{width:76px;justify-content:center}
+.score{padding:0;min-height:0}.piano-key{transition:none}.piano-tools{flex-wrap:wrap;justify-content:flex-end;gap:13px}
+@media(min-width:1450px){.app-shell{padding-top:30px}.piano{height:145px}}
+@media(max-height:820px) and (min-width:851px){
+  .app-shell{padding:16px 26px 10px}.app-header{margin-bottom:15px}.brand img{width:34px;height:34px}.brand h1{font-size:22px}
+  .workspace{gap:18px}.explorer{padding:16px;grid-template-columns:94px minmax(0,1fr);column-gap:10px}.root-button{height:30px}.root-row{margin-bottom:8px}
+  .wheel-wrap{width:min(100%,calc(100dvh - 340px))}.wheel-legend{margin-top:3px;font-size:7px;gap:8px}
+  .chord-sidebar{gap:18px}.chord-readout #chord-symbol{font-size:23px}.piano-panel{margin-top:16px;padding:13px 18px 9px}.piano-toolbar{margin-bottom:10px}.piano{height:105px}.piano-bottom{margin-top:8px}.app-footer{margin-top:10px}
+}
+@media(max-width:1150px){.app-shell{padding-left:20px;padding-right:20px}.workspace{grid-template-columns:minmax(470px,1.25fr) minmax(230px,1fr);gap:16px}.piano-title>span{display:none}.volume{font-size:0}.volume input{width:80px}.root-heading span:last-child{font-size:8px}.piano-tools{gap:10px}}
+@media(max-width:850px){
+  .app-shell{padding:20px}.workspace{grid-template-columns:minmax(0,1fr)}.explorer{grid-template-columns:minmax(0,1fr);padding:20px}
+  .wheel-area{grid-column:1;grid-row:3}.wheel-wrap{width:min(100%,480px);max-width:100%}
+  .chord-sidebar{grid-column:1;grid-row:4;flex-direction:row;justify-content:space-between;align-items:center;gap:14px;margin-top:18px}
+  .chord-readout{flex:1}.explorer-footer{flex-direction:row;align-items:center;gap:12px}.octave-controls{width:65px}.accidentals{width:auto}
+  .score{min-height:240px}.piano-toolbar{align-items:flex-start}.piano-tools{flex-wrap:wrap;justify-content:flex-end}.piano-panel{padding:15px}.app-footer>span:not(#mode-shortcuts){display:none}.piano-bottom{gap:20px}.header-actions{gap:10px}.status{display:none}
+}
+@media(max-width:480px){
+  .app-shell{padding:14px 10px}.explorer{padding:16px 12px}.root-row{gap:3px}.root-button{font-size:11px;border-radius:7px;height:31px}.root-heading span:last-child{font-size:8px}
+  .chord-sidebar{gap:8px}.chord-readout #chord-symbol{font-size:22px}.note-chips span{font-size:9px;padding:3px}.chord-readout p{font-size:9px}.explorer-footer{gap:7px}.accidentals{flex-direction:column}.octave-controls{width:58px}
+  .shortcut-grid{grid-template-columns:repeat(2,1fr);gap:3px 12px}dialog{padding:20px}.piano-title h2{font-size:12px}.piano-tools select{max-width:130px}.piano-bottom{font-size:8px}.brand h1{font-size:22px}.brand p{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+/* Viewport-fitted desktop workspace: the keyboard and shortcut footer stay visible. */
+.glass-select{position:relative;flex-shrink:0;font-size:10px}
+.select-trigger{max-width:165px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:6px 9px;border:1px solid #ffffffbb;border-radius:8px;background:#ffffff65;color:#58744b;box-shadow:inset 0 1px 0 #fff9;font-size:10px}
+.select-trigger:hover,.select-trigger[aria-expanded=true]{background:#ffffffa6}
+.select-menu{position:absolute;bottom:calc(100% + 9px);right:0;min-width:160px;max-width:240px;max-height:230px;overflow:auto;z-index:30;padding:5px;border-radius:12px;background:#eef4ecf5;box-shadow:0 12px 35px #263b3326}
+.select-menu button{display:block;width:100%;text-align:left;padding:9px 11px;border-radius:7px;background:none;font-size:11px}
+.select-menu button:hover,.select-menu button:focus{background:#dcebd4}
+.select-menu button[aria-selected=true]{background:#cfe2c2;color:#36562a}
+.piano-panel{position:relative;z-index:3}.piano-tools{gap:10px}
+.header-actions{gap:10px}
+.sector.detected path{fill:#98c379;stroke:#f4fbea;stroke-width:1.5}.sector.detected text{fill:#294523}
+/* Keep chord reference dots separate from the live pressed/sustain colors. */
+.piano-scroll{padding-top:13px}
+.piano-key.chord-note::before{content:"";position:absolute;left:50%;top:-13px;width:6px;height:6px;border-radius:50%;background:#98c379;transform:translateX(-50%);pointer-events:none}
+
+.midi-active .sector.playing:not(.detected) path,.midi-active .sector.preview:not(.detected) path{fill:#ffffff60;stroke:#ffffffb0}
+@media(min-width:851px){
+  .app-shell{height:100dvh;max-width:1800px;padding:clamp(12px,2vh,24px) clamp(18px,2.2vw,38px) 10px;display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;gap:clamp(9px,1.6vh,18px)}
+  .app-header,.piano-panel,.app-footer{margin:0}
+  .workspace{min-height:0;grid-template-columns:minmax(440px,1.12fr) minmax(0,1fr);gap:18px}
+  .explorer{min-height:0;padding:clamp(12px,1.8vh,20px);grid-template-rows:auto auto minmax(0,1fr);grid-template-columns:104px minmax(0,1fr)}
+  .wheel-area{min-height:0;overflow:hidden}.wheel-wrap{flex:none;max-width:none}
+  .chord-sidebar{max-height:100%;overflow:auto;gap:clamp(8px,2vh,20px)}
+  .explorer-footer{gap:clamp(8px,1.5vh,16px)}.root-row{margin-bottom:6px}
+  .piano-panel{padding:12px 18px 9px}.piano-toolbar{margin-bottom:10px;gap:10px}
+  .piano{height:clamp(76px,15vh,145px)}.piano-bottom{margin-top:7px}.app-footer{min-height:17px}
+}
+@media(min-width:851px) and (max-height:650px){
+  .brand p,.piano-title>span{display:none}.brand img{width:30px;height:30px}.brand h1{font-size:21px}
+  .root-button{height:27px}.root-heading{margin-bottom:5px}.chord-sidebar{gap:9px}
+  .chord-readout{gap:5px}.chord-readout #chord-symbol{font-size:21px}.note-chips span{padding:2px 3px}
+  .octave-controls{gap:4px}.octave-controls button{height:23px}.explorer-footer{gap:7px}
+}
+@media(max-width:850px){.header-actions{gap:5px}.header-actions .glass-button{padding:8px}.header-actions .glass-button span{display:none}.piano-toolbar{flex-wrap:wrap}.piano-tools{justify-content:flex-start}.select-trigger{max-width:140px}}
+
+@media(min-width:851px){.piano{min-width:0}}
+
+/* Instrument modes share the same workspace and audio engine. */
+.brand-and-mode{display:flex;align-items:center;gap:24px;min-width:0}
+.mode-selector{display:flex;gap:4px;margin:0;padding:5px;border:1px solid #ffffffc9;border-radius:12px;background:#ffffff40}
+.mode-selector legend{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.mode-selector label{display:flex;align-items:center;gap:6px;padding:7px 9px;border-radius:8px;font-size:11px;color:#657867;cursor:pointer;white-space:nowrap}
+.mode-selector label:has(:checked){background:#d5e5cd;color:#304c32;box-shadow:0 2px 5px #314d3e09}
+.mode-selector input{margin:0;accent-color:#65854f;width:12px;height:12px}
+.guitar-panel{grid-column:1/-1;grid-row:4;display:flex;align-items:center;justify-content:center;gap:30px;border-top:1px solid #70866b20;padding-top:10px;min-height:0}
+.guitar-panel h2{font-size:26px}.guitar-panel p:not(.eyebrow),.sax-panel p:not(.eyebrow){font-size:11px;line-height:1.7;color:#7b8b79;margin-top:8px}
+.fingering-legend{font-size:10px!important}.guitar-panel svg{height:100%;max-height:210px;width:190px;flex-shrink:0}
+.guitar-diagram text{fill:#667460;font-size:10px}.guitar-diagram .fret-line{stroke:#52604f;stroke-width:.8}.guitar-diagram .fret-nut{stroke:#263b33;stroke-width:3}
+.guitar-diagram .finger-dot{fill:#172219}.guitar-diagram .finger-number{fill:#fff;font-size:9px}.guitar-diagram .barre{stroke:#172219;stroke-width:16;stroke-linecap:round}
+body[data-mode=guitar] .octave-controls{display:none}
+.sax-panel{grid-column:1/-1;grid-row:1/-1;display:flex;flex-direction:column;align-items:center;text-align:center;min-height:0;gap:8px;padding:10px}
+.sax-panel h2{font-size:32px;font-weight:500}.sax-panel .eyebrow{margin-bottom:8px}
+#sax-diagram{flex:1;min-height:0;width:100%;display:flex;justify-content:center}#sax-diagram svg{height:100%;max-width:100%;width:auto;overflow:visible}
+#sax-diagram [data-sax-key]{fill:#fff;stroke:#354235;stroke-width:.5;stroke-miterlimit:10}#sax-diagram .closed{fill:color-mix(in srgb,#98c379 calc(var(--sax-level,1)*100%),#fff)}
+body[data-mode=saxophone] .root-heading,body[data-mode=saxophone] .root-row,body[data-mode=saxophone] .wheel-area,body[data-mode=saxophone] .chord-sidebar{display:none}
+body:not([data-mode=piano]) #midi-connect,body:not([data-mode=piano]) #midi-devices{display:none!important}
+body[data-mode=saxophone] .piano-title>span{display:inline}
+@media(min-width:851px){
+  body[data-mode=guitar] .app-shell{grid-template-rows:auto minmax(0,1fr) auto}
+  body[data-mode=guitar] .explorer{grid-template-rows:auto auto minmax(0,1fr) minmax(155px,28%)}
+  body[data-mode=saxophone] .explorer{grid-template-rows:minmax(0,1fr)}
+}
+@media(max-width:1100px){.brand-and-mode{gap:12px}.mode-selector label{padding:6px}.header-actions .status{display:none}}
+@media(min-width:851px) and (max-height:700px){
+  .sax-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(90px,.65fr);grid-template-rows:minmax(0,1fr) auto;padding:4px;gap:6px}
+  .sax-panel h2{font-size:26px}#sax-diagram{height:100%}.sax-panel .sax-range{grid-column:1/-1;margin:0!important}
+}
+@media(max-width:850px){
+  .app-header{flex-wrap:wrap;gap:12px}.brand-and-mode{flex-wrap:wrap}.mode-selector{gap:0}
+  body[data-mode=guitar] .guitar-panel{grid-row:5;margin-top:20px;padding-top:16px;min-height:205px;gap:14px}
+  body[data-mode=saxophone] .explorer{min-height:500px}.sax-panel{min-height:450px}#sax-diagram{height:300px;flex:auto}
+  body[data-mode=saxophone] .piano{min-width:650px}
+}
+
+/* Multiple conventional grips share the space beneath the wheel. */
+.guitar-panel{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:3px;overflow:auto}
+.guitar-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.guitar-heading>div:first-child{display:flex;align-items:baseline;gap:12px}
+.guitar-heading .eyebrow{margin:0}.guitar-panel h2{font-size:23px}.guitar-controls{display:flex;align-items:center;gap:14px}.guitar-controls .volume{font-size:10px}
+.guitar-panel p:not(.eyebrow){margin:0;font-size:10px;line-height:1.5}.guitar-panel .fingering-legend{text-align:center}
+.guitar-diagrams{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;flex:1;min-height:0}
+.guitar-shape{display:flex;flex-direction:column;align-items:center;min-height:0;padding:6px 3px;border:1px solid #b5c7b150;border-radius:11px;background:#ffffff38}
+.guitar-shape:hover{background:#ffffff90}.guitar-shape[aria-pressed=true]{background:#e1edd990;border-color:#8ca47f}
+.guitar-panel .guitar-diagram{width:100%;height:auto;min-height:0;max-height:170px;flex:1}.shape-title{font-size:10px;color:#4b6448}.shape-detail{font-size:9px;color:#71836d;line-height:1.5}
+.guitar-diagram .fret-number{font-size:10px;fill:#526b49;font-weight:600}
+@media(min-width:851px){
+  body[data-mode=guitar] .explorer{grid-template-rows:auto auto minmax(0,1fr) minmax(235px,35%)}
+  body[data-mode=saxophone] .workspace{grid-template-columns:minmax(230px,.56fr) minmax(0,1.56fr)}
+  body[data-mode=saxophone] .explorer{grid-template-columns:minmax(0,1fr)}
+}
+@media(min-width:851px) and (max-height:700px){
+  body[data-mode=guitar] .explorer{grid-template-rows:auto auto minmax(0,1fr) 210px}
+  .guitar-heading .eyebrow{display:none}.guitar-panel .guitar-diagram{max-height:135px}
+  .sax-panel{display:flex;flex-direction:column}.sax-panel h2{font-size:23px}.sax-panel p:not(.eyebrow){font-size:10px;margin-top:3px}.sax-panel .eyebrow{margin-bottom:3px}
+  #sax-diagram{flex:1;height:auto;min-height:0}
+}
+@media(max-width:850px){body[data-mode=guitar] .guitar-panel{gap:5px}.guitar-diagrams{min-height:180px}.guitar-heading>div:first-child{display:block}.guitar-heading .eyebrow{font-size:8px}.guitar-controls{gap:8px}.guitar-controls .volume input{width:72px}.shape-title{font-size:9px}}
+.guitar-diagram .slash-bass-dot{fill:#98c379}.guitar-diagram .slash-bass-label{fill:#98c379;font-weight:700}
+
+/* App labels and sheet ink are controls, not selectable document text. */
+body{-webkit-user-select:none;user-select:none}
+input:not([type=radio]):not([type=range]),textarea,[contenteditable=true]{-webkit-user-select:text;user-select:text}
