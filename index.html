@@ -13,10 +13,12 @@
   <script defer src="app/music.js"></script>
   <script defer src="app/piano-samples.js"></script>
   <script defer src="app/audio.js"></script>
+  <script defer src="app/recording.js"></script>
   <script defer src="app/select.js"></script>
   <script defer src="app/guitar.js"></script>
   <script defer src="app/saxophone-data.js"></script>
   <script defer src="app/app.js"></script>
+  <script defer src="app/recording-ui.js"></script>
 </head>
 <body data-mode="piano">
   <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
@@ -24,7 +26,12 @@
     <header class="app-header">
       <div class="brand-and-mode"><div class="brand"><img src="app/icon.svg" alt="" width="40" height="40"><div><h1>OKeys<span>studio</span></h1><p>A little space for harmony.</p></div></div>
       <fieldset class="mode-selector" aria-label="Instrument mode"><legend>Instrument mode</legend><label><input type="radio" name="mode" value="piano" checked> Piano</label><label><input type="radio" name="mode" value="guitar"> Guitar</label><label><input type="radio" name="mode" value="saxophone"> Saxophone</label></fieldset></div>
-      <div class="header-actions"><span id="audio-state" class="status" title="Click or press a key to enable low-latency audio"><i></i>Ready to play</span><button class="glass-button" id="help-button" title="Keyboard shortcuts">⌨ <span>Shortcuts</span></button><button class="glass-button" id="fullscreen-button" aria-label="Enter fullscreen" title="Enter fullscreen">⛶ <span>Fullscreen</span></button></div>
+      <div class="header-actions"><span id="audio-state" class="status" title="Click or press a key to enable low-latency audio"><i></i>Ready to play</span>
+        <div class="recording-controls" aria-label="Performance recording">
+          <button class="glass-button record-button" id="record-toggle" aria-label="Start recording" aria-pressed="false" title="Record the sound of OKeys as an uncompressed 24-bit WAV"><i aria-hidden="true"></i><span id="record-label">Record</span><output id="record-time" aria-label="Recording duration" hidden>0:00</output></button>
+          <button class="glass-button" id="record-last" aria-label="Open last recording" title="Listen to or download your last recording" hidden>Last take</button>
+        </div>
+        <button class="glass-button" id="help-button" title="Keyboard shortcuts">⌨ <span>Shortcuts</span></button><button class="glass-button" id="fullscreen-button" aria-label="Enter fullscreen" title="Enter fullscreen">⛶ <span>Fullscreen</span></button></div>
     </header>
     <main class="workspace">
       <section class="glass explorer" aria-label="Chord explorer">
@@ -72,6 +79,16 @@
   </div>
   <dialog id="help"><div class="dialog-heading"><div><p class="eyebrow">MAKE IT SECOND NATURE</p><h2>Your keyboard, in harmony.</h2></div><button id="help-close" class="glass-button" aria-label="Close shortcuts">✕</button></div><p>Press <b>A–G</b> to select a root. Press the same letter again to clear it.<br><b>Shift</b> toggles sharp; tap <b>Ctrl</b> to toggle flat. Selecting the other accidental replaces the first. Clearing or changing the root clears the accidental. Tab plays the next sheet chord; backtick (`) plays the previous chord; Caps Lock replays the current chord. Clicking a sheet chord sets the position for both directions. Ctrl shortcuts such as copy and refresh still work.</p><div class="shortcut-grid" id="shortcuts"></div><div class="help-foot"><p><b>Modes:</b> Piano supports MIDI. Guitar keeps the chord wheel and shows a standard-tuning fretboard below it. Saxophone replaces the wheel with fingerings from the supplied chart; click or touch its 42 keys (C3–F6), or focus a key and press Enter. Space controls sheet scrolling when a sheet is loaded. MIDI input is disabled in Guitar and Saxophone modes. Guitar automatically selects a plucked-string sound and strums the displayed frets. Saxophone selects a sustained reed sound with gentle vibrato; release fades quickly with Auto Sustain off, or over 1.5 seconds with it on. A single note keeps its fingering visible after release. Playing a chord or multiple keys clears it. These two sounds are synthesized locally and work offline.</p><p><b>↑ / ↓</b> change octave · <b>Escape</b> stops sound and clears selection.<br>Chords ring for 2.5 seconds, or decay naturally with auto sustain on. Click or touch piano keys to play individual notes.</p><p><b>MIDI:</b> Connect MIDI, allow browser access, then select your device. Velocity and CC64 sustain are supported. Use wired audio for the lowest delay. Held keys stay green; pedal-held highlights fade with each note’s sound. Chord recognition uses the keys held by your fingers, ignores octave doubling, and requires an exact match. Ambiguous chords prefer the bass as root.
 <br><b>Sustain:</b> Auto sustain is on by default. Click Sustain to toggle it. Off follows your pedal. On keeps released notes ringing and clears old tails as soon as your held notes form a new recognized chord; single notes decay naturally. Keys still held down keep sounding. MIDI chord detection runs as each note arrives, without delaying playback. Click again to return to your pedal.<br><b>Sheet playback:</b> Auto Sustain off plays on press and fades quickly on release. Auto Sustain on plays when you release the click, then rings out. Guitar grids show the base chord in black and added slash-bass positions in green.<br><b>Sound:</b> Grand piano uses local Salamander recordings by Alexander Holm (CC BY 3.0). Samples decode once at startup; note playback requires no downloads.</p></div></dialog>
+  <dialog id="recording-dialog" aria-labelledby="recording-title">
+    <div class="dialog-heading"><div><p class="eyebrow">YOUR PERFORMANCE</p><h2 id="recording-title">Your recording.</h2></div><button id="recording-close" class="glass-button" aria-label="Close recording">✕</button></div>
+    <p id="recording-details"></p>
+    <audio id="recording-preview" controls preload="metadata" aria-label="Preview your recording"></audio>
+    <p id="recording-warning" role="status" hidden></p>
+    <div class="recording-download"><a id="recording-download" class="glass-button">Download WAV</a><span id="recording-size"></span></div>
+    <p class="recording-note">Records the sound of OKeys, including MIDI and sustain. WAV preserves this mix without adding lossy compression; it does not add detail to the original piano samples.</p>
+    <p class="recording-note">Download to keep this take before recording another or closing OKeys. Takes stop automatically at 15 minutes (or the memory limit).</p>
+  </dialog>
+  <div id="recording-status" class="visually-hidden" role="status" aria-live="polite"></div>
   <div id="toast" class="toast" role="status" hidden></div>
 </body>
 </html>

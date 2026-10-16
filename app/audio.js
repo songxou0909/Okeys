@@ -14,6 +14,8 @@
         headroom.gain.value=.125;
         guard.curve=Float32Array.from({length:8193},(_,i)=>{const x=(i/8192*2-1)*8,a=Math.abs(x);return Math.sign(x)*(a<=.75?a:.75+.25*Math.tanh((a-.75)/.25));});
         this.master.connect(headroom);headroom.connect(guard);guard.connect(this.context.destination);
+        // Recording taps the same guarded mix as the speakers, without delaying playback.
+        this.output=guard;
         // An input-connected analyser with no output is an automatic-pull node.
         // In Chromium's interactive mode this keeps the real audio device warm
         // through silence instead of switching to its delayed silent sink.

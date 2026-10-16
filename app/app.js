@@ -319,10 +319,12 @@ document.addEventListener('pointerdown',()=>document.body.classList.remove('keyb
 // Keep native cursor movement inside actual text editors.
 document.addEventListener('keydown',event=>{
   if(!['ArrowLeft','ArrowRight'].includes(event.code)||event.ctrlKey||event.altKey||event.metaKey||event.isComposing)return;
+  if(event.target.closest('#recording-dialog'))return;
   if(event.target.closest('textarea,input:not([type="radio"]):not([type="range"]),[contenteditable="true"],[role="textbox"]'))return;
   event.preventDefault();event.stopImmediatePropagation();
 },true);
 document.addEventListener('keydown',event=>{
+  if($('recording-dialog').open)return;
   // Sheet Tab is handled in capture; native Tab focus is only used in dialogs.
   if(event.code==='Tab'){document.body.classList.add('keyboard-navigation');return;}
   document.body.classList.remove('keyboard-navigation');
